@@ -28,5 +28,5 @@ def bright(inc):
 keyboard.add_hotkey(DIMMER, bright, args=(-INCREMENT,))
 keyboard.add_hotkey(BRIGHTER, bright, args=(INCREMENT,))
 
-keyboard.wait()
+keyboard.wait('ESC')
 
