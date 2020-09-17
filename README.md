@@ -1,7 +1,11 @@
 brighter
 ========
 
-Laptop backlight brightness control
+Laptop backlight brightness control for Linux
+
+## Tested on
+- Ubuntu 20.04 LTS
+- HP ZBook 15
 
 ## Features
 
