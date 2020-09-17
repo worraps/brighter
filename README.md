@@ -21,14 +21,16 @@ Laptop backlight brightness control
 - edit hotkeys and increment
 - copy **brighter** to /usr/bin/mykeys
 ```
-sudo cp brighter /usr/bin/brighter
-sudo chmod +x /usr/bin/brighter
+user@laptop:~/src$ git clone https://github.com/worraps/brighter.git
+user@laptop:~/src$ cd brighter/
+user@laptop:~/src/brighter$ sudo cp brighter /usr/bin/brighter
+user@laptop:~/src/brighter$ sudo chmod +x /usr/bin/brighter 
 ```
 
 ## Usage
 
 - Execute brighter from terminal
-    `$ brighter`
+    `user@laptop:~$ sudo brighter`
 - Press hotkey combination to increase/decrease brightness
 - Press ESC when finished
 
