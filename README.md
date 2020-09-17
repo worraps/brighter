@@ -32,8 +32,9 @@ sudo chmod +x /usr/bin/brighter
 - Press hotkey combination to increase/decrease brightness
 - Press ESC when finished
 
+## TODO
 
-
-TODO:
+- make setup package
+- move config to /etc/
 
 

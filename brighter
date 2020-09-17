@@ -1,0 +1,34 @@
+#!/home/sparrow/dev/keymap/.venv/bin/python3
+# .venv/bin/python3
+
+import keyboard
+import os,subprocess
+
+DIMMER='ctrl+alt+shift+F2'
+BRIGHTER='ctrl+alt+shift+F3'
+INCREMENT=10000
+
+def bright(inc):
+    #get curval
+    process = subprocess.run(['cat','/sys/class/backlight/intel_backlight/max_brightness'],stdout=subprocess.PIPE)
+    maxval=process.stdout.decode('utf-8').strip()
+    process = subprocess.run(['cat','/sys/class/backlight/intel_backlight/brightness'],stdout=subprocess.PIPE)
+    curval=process.stdout.decode('utf-8').strip()
+    if curval.isnumeric():
+        level=int(curval)+inc
+        if level<0:
+            level=0
+        if level>int(maxval):
+            level=int(maxval)
+        print(level)
+        f=open('/sys/class/backlight/intel_backlight/brightness','+w')
+        process = subprocess.run(['echo',str(level)], check=True, stdout=f)
+        output = process.stdout
+    else:
+        print(f'Error: non-numeric value {curval} in /sys/class/backlight/intel_backlight/brightness')
+
+keyboard.add_hotkey(DIMMER, bright, args=(-INCREMENT,))
+keyboard.add_hotkey(BRIGHTER, bright, args=(INCREMENT,))
+
+keyboard.wait()
+
