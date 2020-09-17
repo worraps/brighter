@@ -17,12 +17,19 @@ Laptop backlight brightness control
 
 ## Install
 
-- download brighter
-- edit hotkeys and increment
-- copy **brighter** to /usr/bin/mykeys
 ```
 user@laptop:~/src$ git clone https://github.com/worraps/brighter.git
 user@laptop:~/src$ cd brighter/
+user@laptop:~/src$ nano brighter
+```
+- Edit defaults
+```
+DIMMER='ctrl+alt+shift+F2'
+BRIGHTER='ctrl+alt+shift+F3'
+INCREMENT=10000
+```
+- Press Ctrl-X to save and exit (if using nano)
+```
 user@laptop:~/src/brighter$ sudo cp brighter /usr/bin/brighter
 user@laptop:~/src/brighter$ sudo chmod +x /usr/bin/brighter 
 ```
