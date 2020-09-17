@@ -1,6 +1,3 @@
-#!/home/sparrow/dev/keymap/.venv/bin/python3
-# .venv/bin/python3
-
 import keyboard
 import os,subprocess
 
