@@ -21,12 +21,12 @@ def bright(inc):
         print(level)
         f=open('/sys/class/backlight/intel_backlight/brightness','+w')
         process = subprocess.run(['echo',str(level)], check=True, stdout=f)
-        output = process.stdout
+#        output = process.stdout
     else:
         print(f'Error: non-numeric value {curval} in /sys/class/backlight/intel_backlight/brightness')
 
 keyboard.add_hotkey(DIMMER, bright, args=(-INCREMENT,))
 keyboard.add_hotkey(BRIGHTER, bright, args=(INCREMENT,))
-
+print(f'Press {DIMMER} or {BRIGHTER} to adjust brightness.\nPress ESC or Ctrl-C to quit.')
 keyboard.wait('ESC')
 
